@@ -1,0 +1,78 @@
+//
+//  main.cpp
+//  Calculation Helper
+//
+//  Created by NICOLAS HORNE on 11/15/19.
+//  Copyright © 2019 NICOLAS HORNE. All rights reserved.
+//
+
+#include <iostream>
+using namespace std;
+int main() {
+    string calc;
+    cout << "Welcome to Calculation Helper. What would you like to calculate? (Throughout this program do not add dollar signs or percent symbols)";
+    cout << "\n1) Interest";
+    cout << "\n2) Finance";
+    cout << "\n3) (Sales) Tax";
+    cout << "\n4) Tip";
+    cout << "\n5) Mortgage";
+    cin >> calc;
+    if (calc == "Interest" or calc == "interest") {
+        double borrowed;
+        double rate;
+        cout << "How much money have you borrowed?";
+        cin >> borrowed;
+        cout << "What is your interest rate?";
+        cin >> rate;
+        double interest_decimal = rate / 100;
+        double interest = interest_decimal * borrowed;
+        double interest_total = interest + borrowed;
+        cout << "Your interest is $" + to_string(interest_decimal) + ", for a total amount of $" + to_string(interest_total) + ".";
+    } else if (calc == "tax" or calc == "Tax") {
+        double item;
+        double state_percentage;
+        cout << "What does the item you are purchasing cost?";
+        cin >> item;
+        cout << "What is your states sales tax percentage?";
+        cin >> state_percentage;
+        double tax_percent = state_percentage / 100;
+        double tax = tax_percent * item;
+        double purchase_total = tax + item;
+        cout << "Your tax is $" + to_string(tax) + ", for a total purchase price of $" + to_string(purchase_total) + ".";
+    } else if (calc == "tip" or calc == "Tip") {
+        double meal;
+        double percent;
+        cout << "What was the cost of your meal?";
+        cin >> meal;
+        cout << "What percentage would you like to tip? (20% is customary)";
+        cin >> percent;
+        double tip_decimal = percent / 100;
+        double tip_total = meal * tip_decimal;
+        double total_cost = tip_total + meal;
+        cout << "Your tip is $" + to_string(tip_total) + ", for a total cost of $" + to_string(total_cost) + ".";
+    } else if (calc == "mortgage" or calc == "Mortgage") {
+        double house;
+        double bank_rate;
+        double down;
+        double time;
+        cout << "What is the cost of your home?";
+        cin >> house;
+        cout << "What is your interest rate?";
+        cin >> bank_rate;
+        cout << "What is your down payment?";
+        cin >> down;
+        cout << "How long is your mortgage?";
+        cin >> time;
+        double months = time * 12;
+        double interest_decimal = bank_rate / 100;
+        double no_down = house - down;
+        double principal_per_month = no_down / months;
+        double month_interest = principal_per_month * interest_decimal;
+        double total_interest = month_interest * months;
+        double total_month = month_interest + principal_per_month;
+        double total_mortgage = total_interest + no_down;
+        cout << "Your mortgage is $" + to_string(total_mortgage) + ", for a monthly cost of $" + to_string(total_month) + ".";
+    } else {
+        cout << "Invalid input.";
+    }
+}

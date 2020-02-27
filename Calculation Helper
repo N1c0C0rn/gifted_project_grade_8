@@ -12,10 +12,8 @@ int main() {
     string calc;
     cout << "Welcome to Calculation Helper. What would you like to calculate? (Throughout this program do not add dollar signs or percent symbols)";
     cout << "\n1) Interest";
-    cout << "\n2) Finance";
     cout << "\n3) (Sales) Tax";
     cout << "\n4) Tip";
-    cout << "\n5) Mortgage";
     cin >> calc;
     if (calc == "Interest" or calc == "interest") {
         double borrowed;
@@ -50,28 +48,6 @@ int main() {
         double tip_total = meal * tip_decimal;
         double total_cost = tip_total + meal;
         cout << "Your tip is $" + to_string(tip_total) + ", for a total cost of $" + to_string(total_cost) + ".";
-    } else if (calc == "mortgage" or calc == "Mortgage") {
-        double house;
-        double bank_rate;
-        double down;
-        double time;
-        cout << "What is the cost of your home?";
-        cin >> house;
-        cout << "What is your interest rate?";
-        cin >> bank_rate;
-        cout << "What is your down payment?";
-        cin >> down;
-        cout << "How long is your mortgage?";
-        cin >> time;
-        double months = time * 12;
-        double interest_decimal = bank_rate / 100;
-        double no_down = house - down;
-        double principal_per_month = no_down / months;
-        double month_interest = principal_per_month * interest_decimal;
-        double total_interest = month_interest * months;
-        double total_month = month_interest + principal_per_month;
-        double total_mortgage = total_interest + no_down;
-        cout << "Your mortgage is $" + to_string(total_mortgage) + ", for a monthly cost of $" + to_string(total_month) + ".";
     } else {
         cout << "Invalid input.";
     }

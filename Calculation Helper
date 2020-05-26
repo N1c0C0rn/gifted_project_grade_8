@@ -11,9 +11,9 @@ using namespace std;
 int main() {
     string calc;
     cout << "Welcome to Calculation Helper. What would you like to calculate? (Throughout this program do not add dollar signs or percent symbols)";
-    cout << "\n1) Interest";
-    cout << "\n3) (Sales) Tax";
-    cout << "\n4) Tip";
+    cout << "\n1) (Simple) Interest";
+    cout << "\n2) (Sales) Tax";
+    cout << "\n3) Tip";
     cin >> calc;
     if (calc == "Interest" or calc == "interest") {
         double borrowed;

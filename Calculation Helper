@@ -25,7 +25,7 @@ int main() {
         double interest_decimal = rate / 100;
         double interest = interest_decimal * borrowed;
         double interest_total = interest + borrowed;
-        cout << "Your interest is $" + to_string(interest_decimal) + ", for a total amount of $" + to_string(interest_total) + ".";
+        cout << "Your interest is $" + to_string(interest) + ", for a total amount of $" + to_string(interest_total) + ".";
     } else if (calc == "tax" or calc == "Tax") {
         double item;
         double state_percentage;
